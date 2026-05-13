@@ -1,13 +1,13 @@
 from fastapi import FastAPI, HTTPException
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(dotenv_path="../.env")
 
-from app.models import WebhookResponse, IncomingMessage
-from app.services.normalizer import normalize
-from app.services.classifier import classify
-from app.services.claude_handler import claude_reply
-from app.services.confidence import calculate_confidence
+from models import WebhookResponse, IncomingMessage
+from services.normalizer import normalize
+from services.classifier import classify
+from services.claude_handler import claude_reply
+from services.confidence import calculate_confidence
 
 app = FastAPI(title="Nistula Message Handler")
 
