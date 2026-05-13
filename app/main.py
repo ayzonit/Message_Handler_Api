@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path="../.env")
+load_dotenv()
 
 from models import WebhookResponse, IncomingMessage
 from services.normalizer import normalize
