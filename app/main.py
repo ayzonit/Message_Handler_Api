@@ -27,5 +27,5 @@ async def handle_message(payload: IncomingMessage):
                             action=action
         )
         
-    except Exception:
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
