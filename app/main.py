@@ -3,11 +3,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from models import WebhookResponse, IncomingMessage
-from services.normalizer import normalize
-from services.classifier import classify
-from services.claude_handler import claude_reply
-from services.confidence import calculate_confidence
+from app.models import WebhookResponse, IncomingMessage
+from app.services.normalizer import normalize
+from app.services.classifier import classify
+from app.services.claude_handler import claude_reply
+from app.services.confidence import calculate_confidence
 
 app = FastAPI(title="Nistula Message Handler")
 
@@ -25,7 +25,7 @@ async def handle_message(payload: IncomingMessage):
                             drafted_reply=reply,
                             confidence_score=score,
                             action=action
-                            )
+        )
         
     except Exception:
         raise HTTPException(status_code=500, detail="Internal Server Error")
