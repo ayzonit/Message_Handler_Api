@@ -1,7 +1,7 @@
 import os 
 from anthropic import Anthropic
-from app.property_context import PROPERTY_CONTEXT
-from app.models import NormalizedMessage
+from property_context import PROPERTY_CONTEXT
+from models import NormalizedMessage
 
 client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 

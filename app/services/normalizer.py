@@ -1,5 +1,5 @@
 import uuid
-from app.models import IncomingMessage, NormalizedMessage
+from models import IncomingMessage, NormalizedMessage
 
 def normalize(payload: IncomingMessage) -> NormalizedMessage:
     return NormalizedMessage(
